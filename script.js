@@ -45,6 +45,10 @@ function initCustomCursor() {
   const cursorRing = document.querySelector(".cursor-ring");
 
   if (!cursor) return;
+  if (isMobileDevice()) {
+    cursor.style.display = "none";
+    return;
+  }
 
   let mouseX = 0,
     mouseY = 0;
@@ -154,6 +158,10 @@ function initNavigation() {
 function initThreeJS() {
   const container = document.getElementById("bg-particles");
   if (!container) return;
+  if (isMobileDevice()) {
+    container.style.display = "none";
+    return;
+  }
 
   // Scene setup
   scene = new THREE.Scene();
@@ -909,6 +917,7 @@ document.head.appendChild(rippleStyle);
 // INITIALIZATION
 // ========================================
 function initializeAnimations() {
+  updateExperienceDuration();
   initCustomCursor();
   initNavigation();
   initThreeJS();
@@ -922,6 +931,9 @@ function initializeAnimations() {
   initParallaxEffects();
   initTechStackAnimation();
   initThemeToggle();
+  initScrollProgress();
+  initBackToTop();
+  initTestimonialsSlider();
   optimizePerformance();
   initEasterEggs();
 }
