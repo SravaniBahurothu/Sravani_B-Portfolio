@@ -6,6 +6,11 @@
     <title>Bahurothu Sravani - Data Analyst & Developer</title>
     <meta name="description" content="Data Analyst & Python Developer crafting innovative data solutions and insights">
     
+    <!-- Performance: Preconnects -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
@@ -13,14 +18,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- External Libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
     
     <!-- Custom Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress"><div class="scroll-progress-bar" id="scroll-progress-bar"></div></div>
+
     <!-- Preloader -->
     <div class="preloader">
         <div class="preloader-content">
@@ -67,6 +75,7 @@
                 <a href="#about" class="nav-link" data-section="about">About</a>
                 <a href="#skills" class="nav-link" data-section="skills">Skills</a>
                 <a href="#portfolio" class="nav-link" data-section="portfolio">Projects</a>
+                <a href="#testimonials" class="nav-link" data-section="testimonials">Testimonials</a>
                 <a href="#experience" class="nav-link" data-section="experience">Experience</a>
                 <a href="#contact" class="nav-link" data-section="contact">Contact</a>
             </div>
@@ -119,6 +128,10 @@
                         <span>Let's Connect</span>
                         <i class="fas fa-paper-plane"></i>
                     </a>
+                    <a href="resume.pdf" class="btn btn-outline" download>
+                        <span>Download Resume</span>
+                        <i class="fas fa-download"></i>
+                    </a>
                 </div>
                 
                 <div class="hero-social">
@@ -170,7 +183,7 @@
                         <div class="stat-label">Projects</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number" data-count="9">0</div>
+                        <div class="stat-number" id="months-exp-counter" data-count="9">0</div>
                         <div class="stat-label">Months Experience</div>
                     </div>
                     <div class="stat-item">
@@ -512,7 +525,7 @@
             <div class="portfolio-grid">
                 <div class="portfolio-item" data-category="machine-learning python">
                     <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop" alt="Leukemia Detection">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop" alt="Leukemia Detection" loading="lazy">
                         <div class="portfolio-overlay">
                             <div class="portfolio-info">
                                 <h3>Leukemia Detection in White Blood Cells</h3>
@@ -539,7 +552,7 @@
                 
                 <div class="portfolio-item" data-category="embedded">
                     <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=400&fit=crop" alt="Photo Resistor System">
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=600&h=400&fit=crop" alt="Photo Resistor System" loading="lazy">
                         <div class="portfolio-overlay">
                             <div class="portfolio-info">
                                 <h3>Photo Resistor using ATMEGA328P</h3>
@@ -566,7 +579,7 @@
                 
                 <div class="portfolio-item" data-category="data-analysis reporting">
                     <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Power BI Dashboard">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Power BI Dashboard" loading="lazy">
                         <div class="portfolio-overlay">
                             <div class="portfolio-info">
                                 <h3>Business Intelligence Dashboard</h3>
@@ -593,7 +606,7 @@
                 
                 <div class="portfolio-item" data-category="reporting data-analysis">
                     <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="SSMS Reports">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="SSMS Reports" loading="lazy">
                         <div class="portfolio-overlay">
                             <div class="portfolio-info">
                                 <h3>Automated SSMS Reporting System</h3>
@@ -620,7 +633,7 @@
                 
                 <div class="portfolio-item" data-category="data-analysis">
                     <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="MS Fabric Migration">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="MS Fabric Migration" loading="lazy">
                         <div class="portfolio-overlay">
                             <div class="portfolio-info">
                                 <h3>MS Fabric Migration Project</h3>
@@ -647,7 +660,7 @@
                 
                 <div class="portfolio-item" data-category="data-analysis python">
                     <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Python Data Analysis">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Python Data Analysis" loading="lazy">
                         <div class="portfolio-overlay">
                             <div class="portfolio-info">
                                 <h3>Python Data Analysis Platform</h3>
@@ -674,7 +687,7 @@
                 
                 <div class="portfolio-item" data-category="data-analysis">
                     <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Excel Analytics">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Excel Analytics" loading="lazy">
                         <div class="portfolio-overlay">
                             <div class="portfolio-info">
                                 <h3>Advanced Excel Analytics</h3>
@@ -701,7 +714,7 @@
                 
                 <div class="portfolio-item" data-category="data-analysis">
                     <div class="portfolio-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Incident Management">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Incident Management" loading="lazy">
                         <div class="portfolio-overlay">
                             <div class="portfolio-info">
                                 <h3>Incident Management System</h3>
@@ -729,6 +742,76 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Testimonials</span>
+                <h2 class="section-title">
+                    What people
+                    <span class="highlight">say about me</span>
+                </h2>
+            </div>
+
+            <div class="testimonials-slider">
+                <div class="testimonials-track-wrapper">
+                    <div class="testimonials-track">
+                        <!-- PLACEHOLDER: replace with a real quote before publishing -->
+                        <div class="testimonial-card">
+                            <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                            <p class="testimonial-text">Add a short quote here from a manager, teammate, or client about working with you — what you delivered and what it was like to collaborate.</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">?</div>
+                                <div class="testimonial-info">
+                                    <h4>Name</h4>
+                                    <p>Role, Company</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- PLACEHOLDER: replace with a real quote before publishing -->
+                        <div class="testimonial-card">
+                            <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                            <p class="testimonial-text">Add a second testimonial here. Keep it specific — mention a project, a deadline, or a problem you helped solve.</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">?</div>
+                                <div class="testimonial-info">
+                                    <h4>Name</h4>
+                                    <p>Role, Company</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- PLACEHOLDER: replace with a real quote before publishing -->
+                        <div class="testimonial-card">
+                            <div class="testimonial-quote-icon"><i class="fas fa-quote-left"></i></div>
+                            <p class="testimonial-text">Add a third testimonial here. Even a couple of sentences from a colleague builds real credibility with visitors.</p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-avatar">?</div>
+                                <div class="testimonial-info">
+                                    <h4>Name</h4>
+                                    <p>Role, Company</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-nav">
+                    <button class="testimonial-arrow testimonial-prev" aria-label="Previous testimonial">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="testimonial-dots">
+                        <button class="testimonial-dot active" aria-label="Testimonial 1"></button>
+                        <button class="testimonial-dot" aria-label="Testimonial 2"></button>
+                        <button class="testimonial-dot" aria-label="Testimonial 3"></button>
+                    </div>
+                    <button class="testimonial-arrow testimonial-next" aria-label="Next testimonial">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
@@ -745,9 +828,9 @@
                     <div class="timeline-content">
                         <div class="timeline-company">
                             <h3>Project Engineer - Data Analyst</h3>
-                            <h4>WIPRO Technologies</h4>
+                            <h4>WIPRO Technologies <span class="badge-current"><span class="dot"></span>Current</span></h4>
                         </div>
-                        <p><strong>9 months of experience</strong> in data analysis and reporting. Specialized in creating comprehensive business intelligence solutions and managing data-driven projects.</p>
+                        <p><strong><span id="exp-duration-text">9 months</span> of experience</strong> in data analysis and reporting. Specialized in creating comprehensive business intelligence solutions and managing data-driven projects.</p>
                         <div class="timeline-responsibilities">
                             <div class="responsibility-item">
                                 <i class="fas fa-chart-bar"></i>
@@ -925,6 +1008,7 @@
                     <a href="#about">About</a>
                     <a href="#skills">Skills</a>
                     <a href="#portfolio">Projects</a>
+                    <a href="#testimonials">Testimonials</a>
                     <a href="#contact">Contact</a>
                 </div>
                 
@@ -951,7 +1035,12 @@
         </div>
     </footer>
 
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <!-- Scripts -->
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
